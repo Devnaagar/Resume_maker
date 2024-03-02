@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a new resume</title>
+    <link href="/form.css" rel="stylesheet">
+</head>
+<body>
+    <div id="form-cont">
+        <% for(data of Datas) { %>
+        <p>Form no: <%=data.form_no%></p>
+        <form method="post" action="/resume/<%=data.form_no%>?_method=PATCH">
+            <h2>Fill the Details Carefully .</h2><br><br>
+            <h4></h4>
+            <div class="details">
+                <div class="div3">
+                    <label for="username" class="font">Full Name</label><br>
+                    <input placeholder="e.g - Dev Naagar" name="username" class="box"  id="username"> 
+                </div>
+                <div class="div3">
+                    <label for="mail" class="font">Email</label><br>
+                    <input placeholder="e.g - YOUR_NAME@gmail.com" name="Email" class="box" id="mail">
+                </div>
+                <div class="div3">
+                    <label for="phoneno" class="font">Mobile NO.</label><br>
+                    <input placeholder="Mobile No." name="number"  class="box" id="phoneno"> 
+                </div>
+            </div> <br>
+            <div class="details">
+                <div class="div3">
+                    <label for="address" class="font">Address</label><br>
+                    <input placeholder="enter your address" name="address" class="box" id="address">
+                </div>
+                <div class="div3">
+                    <label for="GitHub" class="font">GitHub profile</label><br>
+                    <input placeholder="enter your GitHub profile" name="GitHub" class="box" id="GitHub">
+                </div>
+                <div class="div3">
+                    <label for="LinkedIn" class="font">LinkedIn profile</label><br>
+                    <input placeholder="enter your link" name="LinkedIn" class="box" id="LinkedIn">
+                </div>
+            </div> <br>
+            <div class="details">
+                <div class="div1">
+                    <label for="skills" class="font">SKILLS : </label><br>
+                    <textarea placeholder="enter your skills" name="skills" class="inp-box1 box" id="Skills"></textarea>
+                </div>
+                <div class="div1">
+                    <label for="Education" class="font">Education: </label><br>
+                    <textarea placeholder="enter your text" name="educations" class="inp-box1 box"id="Education"></textarea>
+                </div>
+             </div><br>
+            <div class="details">
+                <div class="div1">
+                    <label for="Experience" class="font">Experience</label><br>
+                    <textarea placeholder="enter your text" name="Experience" class="inp-box1 box"id="Experience"></textarea>
+                </div>
+                <div class="div1">
+                    <label for="Projects" class="font">Acedemic Projects:</label><br>
+                    <textarea placeholder="enter your text" name="Projects" class="inp-box1 box" id="Projects"></textarea>
+                </div>
+            </div><br>
+            <div class="details">
+                <div class="div2">
+                    <label for="Postofresp" class="font">Position of Responsibility</label><br>
+                    <textarea placeholder="enter your text" name="Postofresp" class="inp-box2 box" id="Postofresp"></textarea>
+                </div>
+                <div class="div2">
+                    <label for="Achivements" class="font">Achivements</label><br>
+                    <textarea placeholder="enter your text" name="Achivements" class="inp-box2 box" id="Achivements"></textarea>
+                </div> 
+                <div class="div2">
+                    <label for="Hobbies" class="font">Hobbies</label><br>
+                    <textarea placeholder="enter your text" name="Hobbies" class="inp-box2 box" id="Hobbies"></textarea>
+                </div>
+            </div><br><br>
+            <button>SUBMIT</button>
+        </form>
+        <%}%>
+    </div>
+    
+</body>
+</html>

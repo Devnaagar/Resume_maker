@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - builder</title>
+    <link href="/style.css" rel="stylesheet">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.1/html2pdf.bundle.js"></script>
+
+    
+</head>
+<body>
+    <h1 class="heading">Resume Maker</h1>
+    <% for(data of Datas) { %>
+    <div class="wholepage">
+        <div class="resumepage">
+            <div class="allcontainer">
+                <div class="head">
+                    <h3 class="user"><%= data.username%></h3>
+                    <h4 class="info"><%=data.Email%> | <%=data.number%>| <%=data.address%></h4>
+                </div>
+                <div class="links">
+                    <div class="git">
+                        <a href="#"><%=data.GitHub%></a>
+                    </div>
+                    <div class="lin">
+                        <a href="#"><%=data.LinkedIn%></a>
+                    </div>
+                </div>
+                <div class="skill">
+                    <h4 class="head1">SKILLS</h4>
+                    <%for (skill of data.skills){%>
+                    <ul >
+                        <li class="listskill">
+                            <%=skill%>
+                        </li>
+                    </ul>
+                    <%}%>
+                </div><br>
+                <div class="Edu">
+                    <h4 class="head1">EDUCATION</h4>
+                    <%for (edu of data.educations){%>
+                    <ul><li>
+                        <%=edu%>
+                    </li></ul>
+                    <%}%>
+                </div>
+                <div class="Exp">
+                    <h4 class="head1">EXPERIENCE</h4>
+                    <%for (exp of data.Experience){%>
+                    <ul><li>
+                        <%=exp%>
+                    </li></ul>
+                    <%}%>
+                </div>
+                <div class="proj">
+                    <h4 class="head1">ACADEMIC PROJECTS</h4>
+                    <%for (proj of data.Projects){%>
+                    <ul><li>
+                        <%=proj%>
+                    </li></ul>
+                    <%}%>
+                </div>
+                <div class="Postofresp">
+                    <h4 class="head1">POSITION OF RESPONSIBILITY</h4>
+                    <%for (posti of data.Postofresp){%>
+                    <ul><li>
+                        <%=posti%>
+                    </li></ul>
+                    <%}%>
+                </div>
+                <div class="Achive">
+                    <h4 class="head1">ACHIVEMENTS</h4>
+                    <%for (achi of data.Achivements){%>
+                    <ul><li>
+                        <%=achi%>
+                    </li></ul>
+                    <%}%>
+                </div>
+                <div class="hobbis">
+                    <h4 class="head1">HOBBIES</h4>
+                    <%for (hobby of data.Hobbies){%>
+                    <ul><li>
+                        <%=hobby%>
+                    </li></ul>
+                    <%}%>
+                </div>
+            </div>
+        </div>
+        
+        <div class="allbuttns">
+            <div class="download btngap">
+                <button class="download link1"><a  onclick="downloadResume()">DOWNLOAD</a></button>
+            </div>
+            <div class="editbtn btngap">
+                <button class="edit link1"><a href="http://localhost:8080/resume/:<%=data.form_no%>/edit">EDIT</a></button>
+            </div>
+            <div class="downloadqr btngap">
+                <button class="qrcode link1" >QR CODE </button>
+            </div><br><br>
+        </div>
+        
+        
+        
+    </div>
+    <script>
+        function downloadResume() {
+            const element = document.querySelector('.allcontainer');
+    
+            html2pdf(element, {
+                margin: 7,
+                filename: 'resume <%=data.username%>.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            });
+        }
+
+    </script>
+    <%}%>
+    
+    
+</body>
+</html>

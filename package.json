@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.3",
+    "method-override": "^3.0.0",
+    "pdfkit": "^0.14.0",
+    "qrcode-svg": "^1.1.0",
+    "uuid": "^9.0.1"
+  },
+  "name": "resume-builder-using-restapis",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "dev ",
+  "license": "ISC",
+  "description": ""
+}

@@ -4,81 +4,190 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create a new resume</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link href="/form.css" rel="stylesheet">
 </head>
 <body>
-    <div id="form-cont">
-        <% for(data of Datas) { %>
-        <p>Form no: <%=data.form_no%></p>
-        <form method="post" action="/resume/<%=data.form_no%>?_method=PATCH">
-            <h2>Fill the Details Carefully .</h2><br><br>
-            <h4></h4>
-            <div class="details">
-                <div class="div3">
-                    <label for="username" class="font">Full Name</label><br>
-                    <input placeholder="e.g - Dev Naagar" name="username" class="box"  id="username"> 
+    <section class="my-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card card-primary mt-3">
+                        <% for(data of Datas) { %>
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-lg-12 d-flex">
+                                    <div class="col-lg-4 ">
+                                        <p>Form no: <%=data.form_no%></p>
+                                    </div>
+                                    <div class="col-lg-8"><h2 class="text-primary">Fill the Details Carefully</h2></div>
+                                </div>
+                            </div>
+                        </div>
+                        <form method="post" action="/resume/<%=data.form_no%>?_method=PATCH"></form>
+                            <div class="card-body">
+                                <div class="col-lg-12 d-flex flex-wrap my-2">
+                                    <div class="form-group col-lg-6 px-2">
+                                        <label for="username" class="mb-1 form-label fw-bold">Full Name</label><br>
+                                        <input placeholder="e.g - Dev Naagar" name="username" class="form-control col-lg-12"  id="username"> 
+                                    </div>
+                                    <div class=" form-group col-lg-6 px-2">
+                                        <label for="mail" class="mb-1 form-label fw-bold">Email</label><br>
+                                        <input placeholder="e.g - YOUR_NAME@gmail.com" name="Email" class="form-control col-lg-12" id="mail">
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-lg-12 d-flex flex-wrap my-2">
+                                    <div class="form-group col-lg-6 px-2">
+                                        <label for="phoneno" class="mb-1 form-label fw-bold">Mobile NO.</label><br>
+                                        <input placeholder="Mobile No." name="number"  class="form-control col-lg-12" id="phoneno"> 
+                                    </div>
+                                    <div class="form-group col-lg-6 px-2">
+                                        <label for="address" class="mb-1 form-label fw-bold">Address</label><br>
+                                        <input placeholder="enter your address" name="address" class="form-control col-lg-12" id="address">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 d-flex flex-wrap my-2">
+                                    <div class="form-group col-lg-6 px-2">
+                                        <label for="GitHub" class="mb-1 form-label fw-bold">GitHub profile</label><br>
+                                        <input placeholder="enter your GitHub profile" name="GitHub" class="form-control col-lg-12" id="GitHub">
+                                    </div>
+                                    <div class="form-group col-lg-6 px-2">
+                                        <label for="LinkedIn" class="mb-1 form-label fw-bold">LinkedIn profile</label><br>
+                                        <input placeholder="enter your link" name="LinkedIn" class="form-control col-lg-12" id="LinkedIn">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 d-flex flex-wrap my-2">
+                                    <div class="form-group col-lg-6 px-2">
+                                        <label for="skills" class="mb-1 form-label fw-bold">SKILLS : </label><br>
+                                        <textarea placeholder="enter your skills" name="skills" class="form-control col-lg-12" id="Skills"></textarea>
+                                    </div>
+                                    <div class="form-group col-lg-6 px-2">
+                                        <label for="Education" class="mb-1 form-label fw-bold">Education: </label><br>
+                                        <textarea placeholder="enter your text" name="educations" class="form-control col-lg-12"id="Education"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 d-flex flex-wrap my-2">
+                                    <div class="form-group col-lg-6 px-2">
+                                        <label for="Experience" class="mb-1 form-label fw-bold">Experience</label><br>
+                                        <textarea placeholder="enter your text" name="Experience" class="form-control col-lg-12"id="Experience"></textarea>
+                                    </div>
+                                    <div class="form-group col-lg-6 px-2">
+                                        <label for="Projects" class="mb-1 form-label fw-bold">Acedemic Projects:</label><br>
+                                        <textarea placeholder="enter your text" name="Projects" class="form-control col-lg-12" id="Projects"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 d-flex flex-wrap my-2">
+                                    <div class="form-group col-lg-6 px-2">
+                                        <label for="Achivements" class="mb-1 form-label fw-bold">Achivements</label><br>
+                                        <textarea placeholder="enter your text" name="Achivements" class="form-control col-lg-12" id="Achivements"></textarea>
+                                    </div> 
+                                    <div class="form-group col-lg-6 px-2">
+                                        <label for="Hobbies" class="mb-1 form-label fw-bold">Hobbies</label><br>
+                                        <textarea placeholder="enter your text" name="Hobbies" class="form-control col-lg-12" id="Hobbies"></textarea>
+                                    </div>
+                                </div>
+                            </div>    
+                            <div class="card-footer">
+                                <div class="col-lg-12 d-flex justify-content-center">
+                                    <button class="btn btn-outline-primary">SUBMIT</button>
+                                </div>
+                                
+                            </div>    
+                            
+                            
+                            
+                        </form>
+                        <%}%>
+                    </div>
                 </div>
-                <div class="div3">
-                    <label for="mail" class="font">Email</label><br>
-                    <input placeholder="e.g - YOUR_NAME@gmail.com" name="Email" class="box" id="mail">
+
+
+
+                <div class="col-lg-8">
+                    <!-- <div class="row">
+                        <div class="col-lg-12 text-center">
+                            <h1 class="heading">Resume Maker</h1>
+                        </div>
+                    </div>                    -->
+                    <div class="card mt-3 p-4">
+                        <div class="allcontainer">
+                            <div class="card-body ">                           
+                                <% for(data of Datas) { %>
+                                <div class="col-lg-12 text-center">
+                                    <h2 class="text-danger"><%= data.username%></h2>
+                                </div>
+                                <div class="col-lg-12 text-center">
+                                    <h6 class="info"><%=data.Email%> | <%=data.number%>| <%=data.address%></h6>
+                                </div>
+                                <div class="col-lg-12 d-flex">
+                                    <div class="col-lg-6">
+                                        <a href="#"><%=data.GitHub%></a>
+                                    </div>
+                                    <div class="col-lg-6 text-end">
+                                        <a href="#"><%=data.LinkedIn%></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 text-start mt-3">
+                                    <h4 class="head1">SKILLS</h4>
+                                    <%for (skill of data.skills){%>
+                                    <ul >
+                                        <li class="listskill">
+                                            <%=skill%>
+                                        </li>
+                                    </ul>
+                                    <%}%>
+                                </div>
+                                <div class="col-lg-12 text-start mt-3">
+                                    <h4 class="head1">EDUCATION</h4>
+                                    <%for (edu of data.educations){%>
+                                    <ul><li>
+                                        <%=edu%>
+                                    </li></ul>
+                                    <%}%>
+                                </div>
+                                <div class="col-lg-12 text-start mt-3">
+                                    <h4 class="head1">EXPERIENCE</h4>
+                                    <%for (exp of data.Experience){%>
+                                    <ul><li>
+                                        <%=exp%>
+                                    </li></ul>
+                                    <%}%>
+                                </div>
+                                <div class="col-lg-12 text-start mt-3">
+                                    <h4 class="head1">ACADEMIC PROJECTS</h4>
+                                    <%for (proj of data.Projects){%>
+                                    <ul><li>
+                                        <%=proj%>
+                                    </li></ul>
+                                    <%}%>
+                                </div>
+                                <div class="col-lg-12 text-start mt-3">
+                                    <h4 class="head1">ACHIVEMENTS</h4>
+                                    <%for (achi of data.Achivements){%>
+                                    <ul><li>
+                                        <%=achi%>
+                                    </li></ul>
+                                    <%}%>
+                                </div>
+                                <div class="col-lg-12 text-start mt-3">
+                                    <h4 class="head1">HOBBIES</h4>
+                                    <%for (hobby of data.Hobbies){%>
+                                    <ul><li>
+                                        <%=hobby%>
+                                    </li></ul>
+                                    <%}%>
+                                </div>
+                            </div>
+                            <%}%>
+                        </div>
+                        
+                    </div>
                 </div>
-                <div class="div3">
-                    <label for="phoneno" class="font">Mobile NO.</label><br>
-                    <input placeholder="Mobile No." name="number"  class="box" id="phoneno"> 
-                </div>
-            </div> <br>
-            <div class="details">
-                <div class="div3">
-                    <label for="address" class="font">Address</label><br>
-                    <input placeholder="enter your address" name="address" class="box" id="address">
-                </div>
-                <div class="div3">
-                    <label for="GitHub" class="font">GitHub profile</label><br>
-                    <input placeholder="enter your GitHub profile" name="GitHub" class="box" id="GitHub">
-                </div>
-                <div class="div3">
-                    <label for="LinkedIn" class="font">LinkedIn profile</label><br>
-                    <input placeholder="enter your link" name="LinkedIn" class="box" id="LinkedIn">
-                </div>
-            </div> <br>
-            <div class="details">
-                <div class="div1">
-                    <label for="skills" class="font">SKILLS : </label><br>
-                    <textarea placeholder="enter your skills" name="skills" class="inp-box1 box" id="Skills"></textarea>
-                </div>
-                <div class="div1">
-                    <label for="Education" class="font">Education: </label><br>
-                    <textarea placeholder="enter your text" name="educations" class="inp-box1 box"id="Education"></textarea>
-                </div>
-             </div><br>
-            <div class="details">
-                <div class="div1">
-                    <label for="Experience" class="font">Experience</label><br>
-                    <textarea placeholder="enter your text" name="Experience" class="inp-box1 box"id="Experience"></textarea>
-                </div>
-                <div class="div1">
-                    <label for="Projects" class="font">Acedemic Projects:</label><br>
-                    <textarea placeholder="enter your text" name="Projects" class="inp-box1 box" id="Projects"></textarea>
-                </div>
-            </div><br>
-            <div class="details">
-                <div class="div2">
-                    <label for="Postofresp" class="font">Position of Responsibility</label><br>
-                    <textarea placeholder="enter your text" name="Postofresp" class="inp-box2 box" id="Postofresp"></textarea>
-                </div>
-                <div class="div2">
-                    <label for="Achivements" class="font">Achivements</label><br>
-                    <textarea placeholder="enter your text" name="Achivements" class="inp-box2 box" id="Achivements"></textarea>
-                </div> 
-                <div class="div2">
-                    <label for="Hobbies" class="font">Hobbies</label><br>
-                    <textarea placeholder="enter your text" name="Hobbies" class="inp-box2 box" id="Hobbies"></textarea>
-                </div>
-            </div><br><br>
-            <button>SUBMIT</button>
-        </form>
-        <%}%>
-    </div>
+            </div>
+        </div>
+    </section>
     
 </body>
 </html>

@@ -1,11 +1,11 @@
 /* @import "path/to/font-awesome/less/font-awesome.less"; */
 body{
-    background-color: lightsteelblue;
+    /* background-color: lightsteelblue;
     margin: 0;
-    padding: 0;
+    padding: 0; */
     /* text-align: center; */
 }
-.wholepage{
+/* .wholepage{
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -41,11 +41,11 @@ a{
     color: blue;
     margin-left: 10px;
     margin-bottom: 10px;
-}
+} */
 /* ul li{
     display: inline;
 } */
-ul { 
+/* ul { 
     padding: 0px;
  }
 .listskill {
@@ -81,12 +81,12 @@ ul {
 .link1{
     text-decoration: none;
     font-size: 32px;
-    font-weight: 600;
+    font-weight: 600; */
     /* padding: 10px;
     background-color: white;
     border: 1px solid black;
     border-radius: 50px; */
-    color: black;
+    /* color: black;
     margin-top: 10px;
 }
 .link1:hover{
@@ -98,10 +98,10 @@ ul {
 .link1 a:hover{
     color: white;
 }
-#qrcode{
+#qrcode{ */
     /* background-color: yellow; */
-    height: 256px;
+    /* height: 256px;
     width: 256px;
-    z-index: 20;
-    /* border: 2px solid black; */
-}
+    z-index: 20; */
+    /* border: 2px solid black; 
+}*/
